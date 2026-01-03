@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.davidmerchan.navigation3demo.basicNavigation.BasicNavigationWrapper
 import com.davidmerchan.navigation3demo.mediumNavigation.MediumNavigationWrapper
 import com.davidmerchan.navigation3demo.ui.theme.Navigation3DemoTheme
 
