@@ -8,6 +8,8 @@ import androidx.navigation3.ui.NavDisplay
 import com.davidmerchan.navigation3demo.screens.DetailScreen
 import com.davidmerchan.navigation3demo.screens.ErrorScreen
 import com.davidmerchan.navigation3demo.screens.HomeScreen
+import com.davidmerchan.navigation3demo.utils.back
+import com.davidmerchan.navigation3demo.utils.navigateTo
 
 @Composable
 fun AdvanceNavigationWrapper(modifier: Modifier = Modifier) {
@@ -17,19 +19,19 @@ fun AdvanceNavigationWrapper(modifier: Modifier = Modifier) {
         modifier = modifier,
         backStack = backStack,
         onBack = {
-            backStack.removeLastOrNull()
+            backStack.back()
         },
         entryProvider = entryProvider {
 
             entry<Routes.Home> {
                 HomeScreen { id ->
-                    backStack.add(Routes.Detail(id))
+                    backStack.navigateTo(Routes.Detail(id))
                 }
             }
 
             entry<Routes.Detail> { key ->
                 DetailScreen(id = key.id) {
-                    backStack.removeLastOrNull()
+                    backStack.back()
                 }
             }
 
